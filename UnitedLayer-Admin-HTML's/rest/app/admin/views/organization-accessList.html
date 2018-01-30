@@ -1,0 +1,27 @@
+<section id="no-more-tables" class="margintop20 middle-wrapper">
+    <table id="example" class="example table table-condensed cf">
+        <thead class="cf">
+            <tr>
+                <th ng-repeat="item in headers">
+                    {{item.title}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in accessListData">
+
+                <td class="numeric">
+                    <a ng-click="selectedUser(item)" ui-sref="home.accessListUserDetails">
+                           {{item.user}}
+                    </a>
+                </td>
+                <td>
+                    {{item.type}}
+                </td>
+                <td>
+                    {{item.lastLogin}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

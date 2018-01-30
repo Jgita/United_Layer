@@ -1,0 +1,79 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">&times;</button>
+    <span class="modal-title"> Add New User</span>
+</div>
+<div class="modal-body" style="padding:20px 40px;">
+
+    <div class="modal-form">
+        <form role="form">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group ">
+                    <label for="">Email</label><input required="required" class="form-control" type="text" />
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 paddingR">
+                    <div class="form-group ">
+                        <label for="">Is Active</label>
+                        <p>
+                            <input type="radio" id="true" name="isActive.yes" value="true" ng-model="isActive[0].data"><label for="true">True</label>
+                            <span class="paddingright paddingleft"></span>
+                            <input type="radio" id="false" name="isActive.no" value="false" ng-model="isActive[0].data"><label for="false">False</label>
+                        </p>
+                    </div>
+                    <div class="form-group ">
+                        <label for="">First Name</label><input required="required" class="form-control" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">Organization</label><input required="required" class="form-control" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">Access Types</label>
+                        <form role="form">
+                            <div>
+                                <select name="speed" id="speed" ng-options="option.name for option in accessTypes track by option.id" ng-model="accessType">
+                                           <option value="" disabled selected>Select</option>
+                            </select>
+                                <span class="select-arrow"></span>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 paddingL">
+                    <div class="form-group ">
+                        <label for="">Is Staff</label>
+                        <p>
+                            <input type="radio" id="true2" name="radio-group"><label for="true2">True</label>
+                            <span class="paddingright paddingleft"></span>
+                            <input type="radio" id="false2" name="radio-group"><label for="false2">False</label>
+                        </p>
+                    </div>
+                    <div class="form-group ">
+                        <label for="">Last Name</label><input required="required" class="form-control" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">Salesforce ID</label><input required="required" class="form-control" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">Groups</label>
+                        <form role="form">
+                            <div>
+                                <select name="speed" id="speed" ng-options="option.name for option in groups track by option.id" ng-model="selectedGroups">
+                                           <option value="" disabled selected>Select</option>
+                            </select>
+                                <span class="select-arrow"></span>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer modal-buttons">
+    <button class="btn btn-cancel" ng-click="cancel()" type="button">Cancel</button>
+    <button class="btn btn-default" ng-click="ok()" type="submit">Add User</button>
+</div>

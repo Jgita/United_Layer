@@ -1,0 +1,97 @@
+<!--Tabs Level 1 Start-->
+<div class="row tabs-level1">
+    <div class="ui-selectee">
+        <nav class="column">
+            <ul class="nav nav-tabs">
+                <span class="ulheading">Customer Support</span>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-wrapper">
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-1 barpaddingtop paddingright">
+            <h3>Organization</h3>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4 paddingright paddingleft">
+            <form role="form">
+                <div>
+                    <select name="speed" id="speed" ng-options="option.name for option in organizationsList track by option.id" ng-model="selectedOrg">
+                    <option value="" disabled selected>Type org to search...</option>
+            </select>
+                    <span class="select-arrow"></span>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 action-bar paddingleft">
+            <button class="btn btn-default" type="button" ng-click="getTickets(selectedOrg)"> Get Tickets</button>
+        </div>
+    </div>
+
+    <div ng-if="expandSelectedTicket" class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 barpaddingtop">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 paddingright">
+                        <div class="row middle-wrapper">
+                            <div class="row content-wrapper">
+                                <h1>Existing Tickets </h1>
+                            </div>
+                        </div>
+                        <section id="no-more-tables" class="margintop20 middle-wrapper" style="height:420px">
+                            <table class="table table-condensed">
+                                <thead class="cf">
+                                    <tr>
+                                        <th ng-repeat="item in headers">
+                                            {{item.title}}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-class="{active:$index==ticketsSelectedRow}" class="tickets-row" ng-repeat="item in existingTickets" ng-click="expandTickets(item, $index)">
+                                        <td>
+                                            {{item.subject}}
+                                        </td>
+                                        <td>
+                                            {{item.status}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 paddingleft">
+                        <div class="row middle-wrapper" style="height:480px">
+                            <div class="row content-wrapper">
+                                <h1>Ticket</h1>
+                            </div>
+                            <div class="row cardbox-header">Subject: {{selectTicketsDetails.subject}}</div>
+                            <div class="row Dashwrap">
+                                <div class="row">
+                                    <strong>Description:</strong> This is to notify you that we’re having a penetrate test within next 2 months. If there is any internal procedure that you want us to follow with, please let me know. I think we will need
+                                    some sort of consent from your company about this. Please let me know if there is any form that I need to fill out. Thanks. Kai Liu VP, System & Network Manager Direct: 310.270.9544 Mobile: 310.409.773 kliu@1cbank.com
+                                    1875 Century Park East, Suite 1400 Los Angeles, CA 90067 1st Century Bank, a division of MidFirst Bank. This communication (including any attachments) may contain privileged or confidential information intended for
+                                    a specific individual and purpose, and is protected by law. If you are not the intended recipient, you should delete this communication and/or shred the materials and any attachments and are hereby notified that any
+                                    disclosure, copying, or distribution of this communication, or the taking of any action based on it, is strictly prohibited. Thank you.
+                                </div>
+                                <div class="row paddingtopbar">
+                                    <strong>Create At:</strong> Nov 29, 2016 4:03:30 AM
+                                </div>
+                                <div class="row paddingtopbar">
+                                    <strong>Updated At:</strong> Dec 4, 2016 5:34:28 AM
+                                </div>
+                                <div class="row paddingtopbar">
+                                    <strong>Created via:</strong> email
+                                </div>
+                                <div class="row paddingtopbar">
+                                    <strong>Zendesk URL:</strong> <a href="#">https://unitedlayer.zendesk.com/hc/en-us/requests/3494</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

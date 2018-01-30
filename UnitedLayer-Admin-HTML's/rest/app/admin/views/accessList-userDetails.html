@@ -1,0 +1,213 @@
+<!--Content Start-->
+<!--Tabs Level 1 Start-->
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tabs-level1">
+    <div class="ui-selectee">
+        <nav class="column">
+            <ul class="nav nav-tabs">
+                <span class="ulheading">User Details - <a>{{userInfo.user}}</a></span>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!--Tabs Level 1 End-->
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="row db-info shadow-btm"> </div>
+</div>
+
+<!--Tabs Level 1 End Content Start-->
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-wrapper">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 paddingright">
+                    <div class="row middle-wrapper">
+                        <div class="row cardbox-header">User Details</div>
+                        <div class="row">
+                            <table class="example table  table-condensed cf">
+                                <tbody>
+                                    <tr ng-repeat="(key, value) in selectedUserDetails">
+                                        <td>
+                                            {{key}}
+                                        </td>
+                                        <td>{{value}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row padding20">
+                            <button class="btn btn-default" ng-click="changeDetails()" type="button">Change Details</button>
+                            <button class="btn btn-default" ng-click="linkSalesforce()" type="button">Link Salesforce</button>
+                        </div>
+                    </div>
+                    <div class="row paddingtop">
+                        <div class="row middle-wrapper">
+                            <div class="row cardbox-header">Roles and Groups</div>
+                            <div class="row">
+                                <table class="example table  table-condensed cf">
+                                    <tbody>
+                                        <tr ng-repeat="(key, value) in rolesGroups">
+                                            <td> {{key}}</td>
+                                            <td>{{value}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row padding20">
+                                <button class="btn btn-default" ng-click="rolesAndGroups()" type="button">Change Roles and Groups</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row paddingtop">
+                        <div class="row middle-wrapper">
+                            <div class="row cardbox-header">Access Types</div>
+                            <div class="row">
+                                <table class="example table  table-condensed cf">
+                                    <thead class="cf">
+                                        <tr>
+                                            <th ng-repeat="item in headers">
+                                                {{item.title}}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in accessType">
+                                            <td>{{item.type}}</td>
+                                            <td>{{item.description}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row padding20">
+                                <button class="btn btn-default" ng-click="changeAccess()" type="button">Change Access</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 paddingleft">
+                    <div class="row middle-wrapper">
+                        <div class="row cardbox-header">Invitation Status</div>
+                        <div class="row">
+                            <table class="example table  table-condensed cf">
+                                <tbody>
+                                    <tr ng-repeat="(key, value) in invitationStatus">
+                                        <td> {{key}}</td>
+                                        <td>{{value}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Send Email Invitation</td>
+                                        <td><button class="btn-green" ng-click="invite()" type="button">Invite</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row paddingtop">
+                        <div class="row middle-wrapper">
+                            <div class="row content-wrapper">
+                                <h1>All Invitations </h1>
+                            </div>
+                            <section id="no-more-tables" class="margintop20 middle-wrapper" style="height:468px">
+                                <table class="table table-condensed">
+                                    <thead class="cf">
+                                        <tr>
+                                            <th ng-repeat="item in allInvitationsHeaders">
+                                                {{item.title}}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in allInvitations">
+                                            <td>
+                                                {{item.date}}
+                                            </td>
+                                            <td>
+                                                {{item.pending}}
+                                            </td>
+                                            <td>
+                                                <a href="#">{{item.cancel}}</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row paddingtop">
+                <h4>Audit Information</h4>
+            </div>
+            <div class="row paddingtop">
+                <div class="middle-wrapper">
+                    <div class="row content-wrapper">
+                        <h1>Logins</h1>
+                    </div>
+                    <section id="no-more-tables" class="margintop20 middle-wrapper">
+                        <table class="table table-condensed">
+                            <thead class="cf">
+                                <tr>
+                                    <th ng-repeat="item in loginsHeaders">
+                                        {{item.title}}
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in loginsDetails">
+                                    <td>
+                                        {{item.lastActivity}}
+                                    </td>
+                                    <td>
+                                        {{item.expireDate}}
+                                    </td>
+                                    <td>
+                                        {{item.IP}}
+                                    </td>
+                                    <td>
+                                        {{item.userAgent}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row paddingtop">
+                <h4>Advanced Options</h4>
+            </div>
+            <div class="row paddingtop">
+                <div class=" middle-wrapper">
+                    <div class="row cardbox-header">Disable User</div>
+                    <div class="row Dashwrap">Disabling a user prevents portal and API access. The user session is immediately destroyed. The user remains assigned to any previously assigned objects. If the user was disabled before, this section allows you to enable the user.
+                        <div class="row paddingtop">
+                            <button class="btn-red" ng-click="disableUser()" type="button">Disable User</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row paddingtop">
+                <div class=" middle-wrapper">
+                    <div class="row cardbox-header">Delete User</div>
+                    <div class="row Dashwrap">Deleting a user removes the user entirely from the database. All audit information is effectively destroyed and cannot be recovered unless you have made a backup.
+                        <div class="row paddingtop">
+                            <button class="btn-red" ng-click="deleteUser()" type="button">Delete User</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

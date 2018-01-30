@@ -1,0 +1,130 @@
+<html ng-app="unitedLayer">
+
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <script type="text/javascript" src="node_modules/moment/moment.js"></script>
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script type='text/javascript' src="node_modules/ng-infinite-scroll/build/ng-infinite-scroll.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <!--chartjs-->
+    <script type="text/javascript" src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script type="text/javascript" src="node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+
+    <!--angular-spinner-->
+    <script type="text/javascript" src="node_modules/spin.js/spin.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-spinner/angular-spinner.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-loading-spinner/angular-loading-spinner.js"></script>
+
+    <!--angular-busy-->
+    <script type="text/javascript" src="bower_components/angular-busy/dist/angular-busy.min.js"></script>
+    <link href="bower_components/angular-busy/dist/angular-busy.min.css" rel="stylesheet" />
+
+    <!--Time Date Range Picker-->
+    <script type="text/javascript" src=" bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script type="text/javascript" src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+    <script type="text/javascript" src="node_modules/angular-date-time-input/src/dateTimeInput.js"></script>
+    <script type="text/javascript" src="vendor/sidebar.min.js"></script>
+
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css" />
+    <link href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css" rel="stylesheet" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="rest/app/admin/components/left-panel/left-panel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bower_components/loaders.css/loaders.min.css" />
+    <link rel="stylesheet" href="node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
+
+    <!--Date Range Picker for Angular and Bootstrap-->
+    <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+    <!--<link rel="stylesheet" href="rest/css/daterangepicker-bs3.css" />-->
+
+    <link href="rest/css/sidebar.css" rel="stylesheet" />
+    <link href="rest/css/ui-tabs.css" rel="stylesheet" />
+    <link href="rest/css/style.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="rest/routes/routeConfig.js"></script>
+    <script type="text/javascript" src="rest/controllers/mainController.js"></script>
+
+    <script type="text/javascript" src="rest/app/admin/controllers/main-page.js"></script>
+    <script type="text/javascript" src="rest/app/admin/components/left-panel/left-panel.js"></script>
+    <script type="text/javascript" src="rest/app/admin/components/header-content/header-content.js"></script>
+    <script type="text/javascript" src="rest/directive/customSort.js"></script>
+
+    <!--united-cloud component js-->
+    <script type="text/javascript" src="rest/app/admin/components/custom-table/custom-table.js"></script>
+
+    <!--Angular Calender-->
+    <link href="node_modules/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
+    <script src="node_modules/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
+
+    <!--Customer Dashboard -->
+    <script type="text/javascript" src="rest/app/admin/controllers/admin-dashboard.js"></script>
+
+    <!--Activity Log-->
+    <script rel="stylesheet" src="rest/app/admin/controllers/activity-log.js"></script>
+
+    <!--united-cloud private js-->
+    <script type="text/javascript" src="rest/app/admin/controllers/private-cloud.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/privateCloud-details.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/privateCustomer-details.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/privateCloud-organizationDetails.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/organization-accessList.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/organization-companyInfo.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/accessList-userDetails.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/privateCloud-assetDetails.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/asset-servers.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/asset-virtualMachines.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/asset-firewalls.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/asset-switches.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/privateCloud-coloDetails.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/colo-cabinets.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/colo-cages.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/colo-PDUs.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/privateCloud-opportunitiesDetails.js"></script>
+
+    <!--United Setup customer-integrations js-->
+    <script type="text/javascript" src="rest/app/admin/controllers/customer-integrations.js"></script>
+
+    <!--Support service-requests js-->
+    <script type="text/javascript" src="rest/app/admin/controllers/service-requests.js"></script>
+
+    <!--United Setup tenant-management js -->
+    <script type="text/javascript" src="rest/app/admin/controllers/tenant-management.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/add-user-modal.js"></script>
+
+    <!--United Setup advanced js -->
+    <script type="text/javascript" src="rest/app/admin/controllers/advanced.js"></script>
+    <script type="text/javascript" src="rest/app/admin/controllers/advance-developerOptions.js"></script>
+
+
+
+</head>
+
+<body ng-controller="mainController">
+
+    <div class="container-fluid full-height no-padding">
+        <div id="holder" class="holder-grey">
+            <div ui-view></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

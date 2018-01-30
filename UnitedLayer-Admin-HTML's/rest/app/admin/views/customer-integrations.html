@@ -1,0 +1,81 @@
+<!--Tabs Level 1 Start-->
+<div class="row tabs-level1">
+    <div class="ui-selectee">
+        <nav class="column">
+            <ul class="nav nav-tabs">
+                <span class="ulheading">Zendesk Integration</span>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!--Tabs Level 1 End-->
+<div class="row">
+    <div class="row db-info shadow-btm"> </div>
+</div>
+
+<div class="row content-wrapper">
+    <!--<div class="col-xs-12 col-sm- col-md-9 col-lg-9 paddingright">-->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-wrapper">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h1>Linked Organizations</h1>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 table-button">
+            <div class="action-bar">
+                <button class="btn btn-default" type="button" ng-click="createTicketModal()">Link an Organization to Zendesk</button>
+            </div>
+        </div>
+    </div>
+    <section id="no-more-tables" class="margintop20 middle-wrapper">
+        <table id="example" class="example table  table-condensed cf">
+            <thead class="cf">
+                <tr>
+                    <th ng-repeat="item in headers">
+                        {{item.title}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-class="{active:$index==selectedRow}" class="tickets-row" ng-repeat="item in linkedOrganizations" ng-click="selectOrg($index)">
+                    <td class="numeric">
+                        {{item.organization}}
+                    </td>
+                    <td class="">
+                        {{item.zendeskID}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <div ng-if="isVisible" class="row paddingtop">
+        <section id="no-more-tables" class="margintop20 middle-wrapper">
+            <table id="example" class="example table table-condensed cf">
+                <thead class="cf">
+                    <tr>
+                        <th ng-repeat="item in selectedOrgHeaders">
+                            {{item.title}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in selectedOrgDetails">
+                        <td class="numeric">
+                            {{item.user}}
+                        </td>
+                        <td>
+                            {{item.email}}
+                        </td>
+                        <td>
+                            {{item.remoteID}}
+                        </td>
+                        <td>
+                            <a ui-sref="">
+                        {{item.link}}
+                         </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
